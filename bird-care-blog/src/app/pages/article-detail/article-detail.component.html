@@ -1,0 +1,118 @@
+<app-navbar></app-navbar>
+
+<article class="min-h-screen bg-gray-50">
+  <!-- Header del artículo -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-6">
+        <a routerLink="/" class="text-nature-green-dark hover:underline">Inicio</a>
+        <span class="mx-2 text-gray-400">/</span>
+        <span class="text-gray-600">{{ article.category }}</span>
+      </nav>
+
+      <!-- Título -->
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+        {{ article.title }}
+      </h1>
+
+      <!-- Meta información -->
+      <div class="flex flex-wrap items-center gap-4 text-gray-600">
+        <span class="inline-flex items-center bg-nature-green-dark text-white px-4 py-1 rounded-full text-sm font-semibold">
+          {{ article.category }}
+        </span>
+        <span class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          {{ article.author }}
+        </span>
+        <span class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          {{ article.date }}
+        </span>
+        <span class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          {{ article.readTime }} lectura
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Imagen destacada -->
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <img
+      [src]="article.image"
+      [alt]="article.title"
+      class="w-full h-96 object-cover rounded-2xl shadow-xl"
+    />
+  </div>
+
+  <!-- Contenido del artículo -->
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+      <div class="prose prose-lg max-w-none" [innerHTML]="article.content"></div>
+
+      <!-- Compartir -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Compartir este artículo</h3>
+        <div class="flex space-x-4">
+          <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">
+            Facebook
+          </button>
+          <button class="bg-sky-500 text-white px-6 py-3 rounded-full hover:bg-sky-600 transition-colors">
+            Twitter
+          </button>
+          <button class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors">
+            WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Artículos relacionados -->
+    <div class="mt-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Artículos Relacionados</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a
+          *ngFor="let related of relatedArticles"
+          [routerLink]="['/article', related.id]"
+          class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden group"
+        >
+          <img
+            [src]="related.image"
+            [alt]="related.title"
+            class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="p-6">
+            <span class="inline-block bg-nature-green-dark text-white px-3 py-1 rounded-full text-sm font-semibold mb-3">
+              {{ related.category }}
+            </span>
+            <h3 class="text-xl font-bold text-gray-800 group-hover:text-nature-green-dark transition-colors">
+              {{ related.title }}
+            </h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Botón volver -->
+    <div class="mt-12 text-center">
+      <a
+        routerLink="/"
+        class="inline-flex items-center bg-nature-green-dark text-white px-8 py-4 rounded-full font-semibold hover:bg-nature-green shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+  </div>
+</article>
+
+<app-footer></app-footer>
