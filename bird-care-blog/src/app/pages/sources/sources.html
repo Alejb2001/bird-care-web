@@ -1,0 +1,187 @@
+<div class="min-h-screen bg-gradient-to-b from-green-50 to-white">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Referencias y Fuentes</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Toda la información de este sitio está basada en fuentes veterinarias y científicas reputables.
+        La salud y bienestar de tus aves es nuestra prioridad.
+      </p>
+    </div>
+
+    <!-- Disclaimer Importante -->
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-12 rounded-r-lg">
+      <div class="flex items-start">
+        <svg class="w-8 h-8 text-yellow-600 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="text-lg font-bold text-yellow-900 mb-2">Aviso Legal Importante</h3>
+          <p class="text-yellow-800 mb-2">
+            <strong>Este sitio web proporciona información general sobre el cuidado de aves domésticas con fines educativos.</strong>
+            La información NO sustituye el consejo, diagnóstico o tratamiento veterinario profesional.
+          </p>
+          <p class="text-yellow-800 mb-2">
+            <strong>Consulta siempre con un veterinario aviar certificado</strong> antes de tomar decisiones sobre la salud,
+            alimentación o cuidado de tus aves. Cada ave es única y puede tener necesidades específicas.
+          </p>
+          <p class="text-yellow-800">
+            <strong>En caso de emergencia médica,</strong> contacta inmediatamente a un veterinario especializado en aves exóticas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fuentes Veterinarias -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        Fuentes Veterinarias
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div *ngFor="let source of getSourcesByType('veterinary')"
+             class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ source.title }}</h3>
+          <p class="text-sm text-gray-600 mb-3">{{ source.organization }}</p>
+          <p class="text-gray-700 mb-4">{{ source.description }}</p>
+          <a [href]="source.url" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center text-nature-green-dark font-semibold hover:underline">
+            Visitar sitio web
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fuentes Académicas -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        <svg class="w-8 h-8 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+        Fuentes Académicas
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div *ngFor="let source of getSourcesByType('academic')"
+             class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ source.title }}</h3>
+          <p class="text-sm text-gray-600 mb-3">{{ source.organization }}</p>
+          <p class="text-gray-700 mb-4">{{ source.description }}</p>
+          <a [href]="source.url" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center text-nature-green-dark font-semibold hover:underline">
+            Visitar sitio web
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Organizaciones de Conservación -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Organizaciones de Conservación y Bienestar
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div *ngFor="let source of getSourcesByType('conservation')"
+             class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ source.title }}</h3>
+          <p class="text-sm text-gray-600 mb-3">{{ source.organization }}</p>
+          <p class="text-gray-700 mb-4">{{ source.description }}</p>
+          <a [href]="source.url" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center text-nature-green-dark font-semibold hover:underline">
+            Visitar sitio web
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Libros Recomendados -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        <svg class="w-8 h-8 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+        Libros de Referencia
+      </h2>
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <p class="text-gray-700 mb-6">
+          Los siguientes libros son referencias clásicas en el cuidado y medicina aviar, escritos por veterinarios
+          y expertos reconocidos internacionalmente:
+        </p>
+        <div class="space-y-4">
+          <div *ngFor="let book of books" class="border-l-4 border-nature-green pl-4 py-2">
+            <h3 class="text-lg font-bold text-gray-900">{{ book.title }}</h3>
+            <p class="text-sm text-gray-600 italic mb-1">{{ book.author }}</p>
+            <p class="text-gray-700">{{ book.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metodología -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Nuestra Metodología</h2>
+      <div class="space-y-4 text-gray-700">
+        <p>
+          La información presentada en este sitio web se basa en:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Guías clínicas publicadas por asociaciones veterinarias aviares certificadas</li>
+          <li>Investigación académica revisada por pares</li>
+          <li>Manuales veterinarios de referencia estándar en la industria</li>
+          <li>Recomendaciones de organizaciones de conservación y bienestar animal</li>
+          <li>Consensos establecidos en la comunidad veterinaria aviar internacional</li>
+        </ul>
+        <p class="font-semibold mt-6">
+          Nos esforzamos por mantener la información actualizada, pero la medicina veterinaria evoluciona constantemente.
+          Siempre verifica con tu veterinario aviar local para obtener los últimos estándares de cuidado.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cómo encontrar un veterinario aviar -->
+    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-lg p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Encuentra un Veterinario Aviar Certificado</h2>
+      <p class="text-gray-700 mb-4">
+        Para encontrar un veterinario especializado en aves cerca de ti, consulta estos directorios:
+      </p>
+      <ul class="space-y-3">
+        <li class="flex items-start">
+          <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <a href="https://www.aav.org/search/custom.asp?id=1803" target="_blank" rel="noopener noreferrer"
+               class="text-nature-green-dark font-semibold hover:underline">
+              AAV - Find a Veterinarian
+            </a>
+            <p class="text-sm text-gray-600">Directorio de veterinarios miembros de la Association of Avian Veterinarians</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <strong class="text-gray-900">Busca un veterinario con certificación en aves exóticas</strong>
+            <p class="text-sm text-gray-600">Pregunta específicamente por experiencia en medicina aviar</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

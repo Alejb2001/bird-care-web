@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ArticleDetailComponent } from './pages/article-detail/article-detail.component';
 import { SpeciesList } from './pages/species-list/species-list';
 import { SpeciesDetail } from './pages/species-detail/species-detail';
+import { Sources } from './pages/sources/sources';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
   {
     path: 'especies/:id',
     component: SpeciesDetail
+  },
+  {
+    path: 'fuentes',
+    component: Sources
   },
   {
     path: '**',

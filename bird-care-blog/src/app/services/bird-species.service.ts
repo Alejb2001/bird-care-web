@@ -443,6 +443,466 @@ export class BirdSpeciesService {
         'El polvo de plumas es notable: considera purificador de aire',
         'Aprenden mejor silbidos que palabras, pero algunos pueden hablar'
       ]
+    },
+    {
+      id: 'diamante-mandarin',
+      commonName: 'Diamante Mandarín',
+      scientificName: 'Taeniopygia guttata',
+      description: 'El diamante mandarín es un pinzón australiano pequeño y activo, perfecto para principiantes. Son aves sociables que viven mejor en parejas o grupos pequeños. Su canto es suave y agradable, y son fáciles de mantener. Son ideales para quienes desean observar el comportamiento natural de las aves sin necesidad de manipulación constante.',
+      image: 'https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=800',
+      characteristics: {
+        size: '10-11 cm de longitud',
+        weight: '12-15 gramos',
+        lifespan: '5-7 años en cautiverio, hasta 10 con excelente cuidado',
+        temperament: ['Activo', 'Social', 'Pacífico', 'Gregario', 'Independiente'],
+        colors: ['Gris con mejillas naranja y pecho rayado (silvestre)', 'Blanco', 'Leonado', 'Perlado', 'Isabel']
+      },
+      care: {
+        dietBasic: 'Mezcla de semillas para pinzones + vegetales frescos',
+        dietDetails: [
+          'Mezcla de semillas: mijo blanco, mijo rojo, alpiste, negrillo',
+          'Verduras frescas: espinaca, lechuga, pepino, zanahoria rallada',
+          'Frutas ocasionales: manzana, pera (pequeñas cantidades)',
+          'Grit para digestión y calcio',
+          'Hueso de jibia disponible siempre',
+          'Pasta de cría durante reproducción',
+          'Evitar: aguacate, chocolate, alimentos salados',
+          'Agua limpia diariamente, les gusta bañarse'
+        ],
+        cageSize: 'Mínimo 60x40x40 cm para una pareja, prefieren jaulas largas para vuelos cortos',
+        temperature: '18-24°C, evitar temperaturas extremas',
+        humidity: '40-60%',
+        socialNeeds: 'Muy social, deben vivir en parejas o grupos. No requieren interacción humana constante'
+      },
+      health: {
+        commonIssues: [
+          'Ácaros de las patas',
+          'Problemas respiratorios por corrientes de aire',
+          'Obesidad si no pueden volar suficiente',
+          'Crecimiento excesivo de uñas',
+          'Retención de huevos en hembras',
+          'Diarrea por cambios bruscos de dieta'
+        ],
+        preventiveCare: [
+          'Limpieza de jaula 2-3 veces por semana',
+          'Bañera disponible diariamente',
+          'Desparasitación preventiva semestral',
+          'Revisión regular de patas y uñas',
+          'Evitar sobrepoblación en jaula',
+          'Mantener ambiente seco y ventilado'
+        ],
+        veterinaryVisits: 'Chequeo anual, o si se observan síntomas de enfermedad'
+      },
+      breeding: {
+        maturityAge: '3-6 meses',
+        breedingSeason: 'Todo el año en cautiverio, más activos en primavera',
+        clutchSize: '4-6 huevos',
+        incubationPeriod: '12-14 días, polluelos independientes a las 3-4 semanas'
+      },
+      behavior: {
+        vocalLevel: 2,
+        activityLevel: 5,
+        sociability: 5,
+        trainability: 1,
+        notes: [
+          'Su canto es suave y melodioso, agradable para apartamentos',
+          'Muy activos durante todo el día',
+          'Prefieren la compañía de otros diamantes a la interacción humana',
+          'Son excelentes para observar comportamiento social natural',
+          'Las parejas forman vínculos fuertes',
+          'Crían fácilmente si se les proporciona nido',
+          'No son aves de manipulación, son para observación'
+        ]
+      },
+      habitat: {
+        origin: 'Australia (zonas áridas y semiáridas)',
+        naturalHabitat: 'Pastizales, sabanas, cerca de fuentes de agua',
+        cageRequirements: [
+          'Jaula larga más que alta (prefieren vuelos horizontales)',
+          'Múltiples perchas a diferentes alturas',
+          'Bañera o plato de agua para baño',
+          'Nidos si se desea criar',
+          'Comederos múltiples para evitar competencia',
+          'Materiales para nido: fibra de coco, paja, hierbas'
+        ],
+        enrichment: [
+          'Ramas naturales con diferentes grosores',
+          'Plantas naturales o artificiales',
+          'Espejos (disfrutan de su reflejo)',
+          'Columpios pequeños',
+          'Música suave de fondo',
+          'Compañía de otros diamantes mandarín'
+        ]
+      },
+      compatibility: {
+        withOwnSpecies: 'Excelente, deben vivir mínimo en pareja, idealmente en grupos',
+        withOtherSpecies: 'Buena con otros pinzones y aves pequeñas pacíficas del mismo tamaño',
+        withChildren: 'Excelente para niños (observación). No requieren manipulación, fáciles de cuidar'
+      },
+      tips: [
+        'Los machos tienen mejillas naranja brillante, las hembras más pálidas',
+        'El canto del macho es señal de salud y felicidad',
+        'Son prolíficos criadores, controla la reproducción si no deseas polluelos',
+        'Les encanta bañarse, ofrecen agua fresca para baño diariamente',
+        'Pueden convivir con canarios y otros pinzones pacíficos',
+        'No necesitan salir de la jaula si esta es espaciosa',
+        'Son muy económicos de mantener',
+        'Perfectos para principiantes en avicultura',
+        'Observar su comportamiento social es fascinante',
+        'Retira nidos si no quieres que críen constantemente'
+      ]
+    },
+    {
+      id: 'cotorra-argentina',
+      commonName: 'Cotorra Argentina',
+      scientificName: 'Myiopsitta monachus',
+      description: 'La cotorra argentina, también conocida como cotorra monje, es un loro pequeño a mediano extremadamente inteligente y social. Son aves muy vocales y activas que pueden aprender trucos y palabras. Forman vínculos fuertes con sus cuidadores y necesitan mucha estimulación mental. Son ideales para dueños experimentados que pueden dedicarles tiempo y atención.',
+      image: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=800',
+      characteristics: {
+        size: '28-31 cm de longitud',
+        weight: '100-150 gramos',
+        lifespan: '20-30 años con cuidados adecuados',
+        temperament: ['Muy inteligente', 'Social', 'Vocal', 'Juguetón', 'Cariñoso', 'Territorial'],
+        colors: ['Verde brillante con pecho y frente gris', 'Azul (mutación)', 'Amarillo (mutación)']
+      },
+      care: {
+        dietBasic: 'Pellets de alta calidad + amplia variedad de frutas y verduras',
+        dietDetails: [
+          'Pellets formulados para loros pequeños (50-60% de dieta)',
+          'Mezcla de semillas (20-30%): girasol, cártamo, avena',
+          'Verduras diarias: brócoli, zanahoria, calabaza, espinaca, pimiento',
+          'Frutas: manzana, uva, mango, papaya, arándanos (20%)',
+          'Granos cocidos: arroz integral, quinoa, lentejas',
+          'Nueces ocasionales: almendras, nueces (con moderación)',
+          'Evitar: aguacate, chocolate, sal, azúcar, alcohol',
+          'Agua fresca 2-3 veces al día'
+        ],
+        cageSize: 'Mínimo 80x60x80 cm, cuanto más grande mejor',
+        temperature: '18-26°C, toleran variaciones moderadas',
+        humidity: '40-70%',
+        socialNeeds: 'MUY ALTO: Necesitan 3-4 horas diarias de interacción. Mejor en parejas si no tienes mucho tiempo'
+      },
+      health: {
+        commonIssues: [
+          'Arrancado de plumas por aburrimiento o estrés',
+          'Psitacosis',
+          'Problemas respiratorios',
+          'Obesidad',
+          'Crecimiento excesivo de pico y uñas',
+          'Problemas hepáticos por dieta alta en grasas',
+          'Comportamiento agresivo por falta de socialización'
+        ],
+        preventiveCare: [
+          'Estimulación mental diaria (juguetes, entrenamiento)',
+          'Dieta balanceada baja en grasas',
+          'Limpieza de jaula 3-4 veces por semana',
+          'Baños o duchas regulares',
+          'Socialización temprana con diferentes personas',
+          'Chequeos veterinarios regulares',
+          'Tiempo de vuelo supervisado diario'
+        ],
+        veterinaryVisits: 'Cada 6-12 meses con veterinario aviar especializado'
+      },
+      breeding: {
+        maturityAge: '1-2 años',
+        breedingSeason: 'Primavera-verano principalmente',
+        clutchSize: '5-8 huevos',
+        incubationPeriod: '23-26 días, polluelos destetados a las 8-10 semanas'
+      },
+      behavior: {
+        vocalLevel: 5,
+        activityLevel: 5,
+        sociability: 5,
+        trainability: 5,
+        notes: [
+          'Pueden aprender a hablar y hacer trucos complejos',
+          'MUY vocales, especialmente por la mañana y tarde',
+          'Son destructores naturales, necesitan juguetes para masticar',
+          'Forman vínculos muy fuertes con sus cuidadores',
+          'Pueden ser territoriales con su jaula',
+          'Les encanta construir nidos, incluso sin intención de criar',
+          'Requieren rutinas consistentes para sentirse seguros',
+          'Pueden ser ruidosos, no aptos para apartamentos con vecinos sensibles'
+        ]
+      },
+      habitat: {
+        origin: 'Argentina, Uruguay, Paraguay, sur de Brasil',
+        naturalHabitat: 'Bosques, áreas urbanas, construyen nidos comunales grandes',
+        cageRequirements: [
+          'Jaula robusta con barrotes fuertes (pueden masticar metal débil)',
+          'Múltiples perchas de diferentes grosores',
+          'Abundantes juguetes destructibles',
+          'Zona de forrajeo',
+          'Columpios y escaleras',
+          'Materiales para construir (incluso sin criar)',
+          'Espacio para vuelo o tiempo fuera de jaula diario'
+        ],
+        enrichment: [
+          'Rotación semanal de juguetes (mínimo 8-10 juguetes)',
+          'Juguetes de madera natural para destruir',
+          'Rompecabezas y juguetes de forrajeo',
+          'Entrenamiento diario con clicker',
+          'Tiempo de vuelo supervisado (2-3 horas)',
+          'Interacción social constante',
+          'Ramas frescas para roer'
+        ]
+      },
+      compatibility: {
+        withOwnSpecies: 'Excelente en parejas o grupos. Son muy sociales entre ellos',
+        withOtherSpecies: 'Moderada. Pueden ser territoriales con otras especies de loros',
+        withChildren: 'Moderada. Pueden morder si se sienten amenazados. Mejor con niños mayores'
+      },
+      tips: [
+        'Son RUIDOSAS: considera a los vecinos antes de adquirir una',
+        'Necesitan MUCHA atención diaria, no son para personas ocupadas',
+        'Los criados a mano son más dóciles',
+        'Socializa temprano con diferentes personas para evitar vinculación exclusiva',
+        'Construirán nidos incluso sin intención de criar',
+        'Son muy inteligentes, pueden abrir cerrojos',
+        'Proporciona MUCHOS juguetes para destruir',
+        'Son gregarias: considera tener una pareja',
+        'Excelentes para entrenamiento y trucos',
+        'Requieren compromiso a largo plazo (viven 20-30 años)',
+        'Son ilegales como mascota en algunos lugares (invasoras)'
+      ]
+    },
+    {
+      id: 'loro-senegal',
+      commonName: 'Loro del Senegal',
+      scientificName: 'Poicephalus senegalus',
+      description: 'El loro del Senegal es un loro africano de tamaño mediano, ideal para apartamentos y dueños intermedios. Son relativamente tranquilos para ser loros, inteligentes y cariñosos con sus dueños. Pueden aprender a hablar algunas palabras y son excelentes compañeros. Son menos demandantes que loros grandes pero igual de afectuosos.',
+      image: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800',
+      characteristics: {
+        size: '23-25 cm de longitud',
+        weight: '120-170 gramos',
+        lifespan: '25-30 años, algunos hasta 50 años',
+        temperament: ['Inteligente', 'Cariñoso', 'Tranquilo', 'Leal', 'Independiente', 'Territorial'],
+        colors: ['Verde con cabeza gris y vientre amarillo/naranja', 'Variaciones en tono del vientre']
+      },
+      care: {
+        dietBasic: 'Pellets de alta calidad como base + frutas y verduras variadas',
+        dietDetails: [
+          'Pellets formulados para loros medianos (60-70% de dieta)',
+          'Mezcla de semillas (15-20%): limitada por alto contenido graso',
+          'Verduras diarias: zanahoria, brócoli, calabaza, pimiento, col',
+          'Frutas: mango, papaya, uva, manzana, granada (15-20%)',
+          'Granos cocidos: arroz integral, pasta, legumbres',
+          'Nueces ocasionales como premio',
+          'Evitar: aguacate, chocolate, cafeína, sal, alcohol',
+          'Agua fresca 2 veces al día'
+        ],
+        cageSize: 'Mínimo 60x60x90 cm, prefieren altura sobre anchura',
+        temperature: '20-26°C, sensibles a frío extremo',
+        humidity: '50-70%',
+        socialNeeds: 'ALTO: Necesitan 2-3 horas de interacción diaria. Forman vínculos fuertes con una persona'
+      },
+      health: {
+        commonIssues: [
+          'Aspergilosis (infección fúngica respiratoria)',
+          'Enfermedad del hígado graso',
+          'Obesidad',
+          'Arrancado de plumas por estrés',
+          'Problemas de comportamiento por vinculación excesiva',
+          'Deficiencia de vitamina A',
+          'Crecimiento excesivo de pico'
+        ],
+        preventiveCare: [
+          'Dieta baja en grasas y semillas',
+          'Ambiente limpio y seco',
+          'Purificador de aire (sensibles a esporas)',
+          'Socialización con múltiples personas desde jóvenes',
+          'Ejercicio diario fuera de jaula',
+          'Baños regulares',
+          'Revisión veterinaria anual'
+        ],
+        veterinaryVisits: 'Cada 6-12 meses, especialmente importante en aves mayores'
+      },
+      breeding: {
+        maturityAge: '3-4 años',
+        breedingSeason: 'Primavera principalmente en cautiverio',
+        clutchSize: '3-4 huevos',
+        incubationPeriod: '25-28 días, polluelos destetados a las 10-12 semanas'
+      },
+      behavior: {
+        vocalLevel: 2,
+        activityLevel: 3,
+        sociability: 4,
+        trainability: 4,
+        notes: [
+          'Relativamente tranquilos, aptos para apartamentos',
+          'Pueden aprender algunas palabras y silbidos',
+          'Tienden a vincularse fuertemente con UNA persona',
+          'Pueden ser territoriales con su jaula',
+          'Muerden si se sienten amenazados o en época hormonal',
+          'Disfrutan de rutinas predecibles',
+          'Son más independientes que otros loros',
+          'Pueden ser tímidos con extraños'
+        ]
+      },
+      habitat: {
+        origin: 'África Occidental (Senegal, Gambia, Guinea)',
+        naturalHabitat: 'Sabanas arboladas, bosques abiertos',
+        cageRequirements: [
+          'Jaula alta con barrotes horizontales',
+          'Múltiples perchas de diferentes texturas',
+          'Juguetes para masticar (madera, cuero)',
+          'Zona de forrajeo',
+          'Columpios',
+          'Área de descanso elevada',
+          'Bañera o sistema de ducha'
+        ],
+        enrichment: [
+          'Rotación de juguetes cada 1-2 semanas',
+          'Juguetes de forrajeo y rompecabezas',
+          'Ramas naturales para roer',
+          'Entrenamiento con refuerzo positivo',
+          'Tiempo fuera de jaula (2-3 horas diarias)',
+          'Música clásica o jazz',
+          'Interacción social diaria'
+        ]
+      },
+      compatibility: {
+        withOwnSpecies: 'Moderada. Pueden ser territoriales, mejor como aves solitarias o parejas establecidas',
+        withOtherSpecies: 'Baja. Pueden ser agresivos con otras especies de loros',
+        withChildren: 'Moderada a baja. Pueden morder. Mejor con adolescentes que respeten su espacio'
+      },
+      tips: [
+        'Excelente loro para apartamentos (relativamente silencioso)',
+        'Socializa con TODA la familia, no solo una persona',
+        'Establece límites tempranos para evitar comportamiento territorial',
+        'No fomentes comportamientos de pareja (acariciar solo la cabeza)',
+        'Son sensibles a cambios de rutina',
+        'Pueden ser tímidos, respeta su espacio',
+        'Excelentes para dueños intermedios de loros',
+        'Requieren menos atención que loros grandes',
+        'Son longevos: compromiso de 25-30+ años',
+        'Las semillas deben ser limitadas (obesidad)',
+        'Son curiosos, asegura el espacio de vuelo',
+        'Responden muy bien al entrenamiento con clicker'
+      ]
+    },
+    {
+      id: 'cacatua',
+      commonName: 'Cacatúa',
+      scientificName: 'Cacatuidae (varias especies)',
+      description: 'Las cacatúas son loros grandes originarios de Australia y región circundante, famosos por su cresta distintiva y personalidad extremadamente cariñosa. Son aves muy inteligentes y demandantes que requieren MUCHA atención diaria. Forman vínculos profundos con sus cuidadores y pueden sufrir problemas de comportamiento graves si se descuidan. Solo para dueños MUY experimentados y comprometidos.',
+      image: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=800',
+      characteristics: {
+        size: '30-60 cm dependiendo de la especie',
+        weight: '300-1000 gramos (varía según especie)',
+        lifespan: '40-70 años (algunas especies hasta 80-100 años)',
+        temperament: ['Extremadamente cariñoso', 'Demandante', 'Inteligente', 'Sensible', 'Vocal', 'Social'],
+        colors: ['Blanco con cresta amarilla (Sulphurea)', 'Blanco puro (Alba)', 'Rosa y gris (Galah)', 'Negro con mejillas rojas (Banksii)']
+      },
+      care: {
+        dietBasic: 'Pellets premium de alta calidad + diversidad de alimentos frescos',
+        dietDetails: [
+          'Pellets de calidad premium para loros grandes (50-60%)',
+          'Mezcla de semillas y nueces (20%): limitada por grasas',
+          'Verduras frescas diarias: brócoli, zanahoria, calabaza, espinaca',
+          'Frutas: mango, papaya, uva, granada, manzana (20%)',
+          'Granos y legumbres cocidas: arroz, quinoa, lentejas',
+          'Nueces: almendras, nueces, avellanas (con moderación)',
+          'Evitar: aguacate, chocolate, sal, azúcar, cafeína, alcohol',
+          'Agua fresca múltiples veces al día'
+        ],
+        cageSize: 'Mínimo 120x90x180 cm, prefieren aviarios o habitación dedicada',
+        temperature: '18-26°C, evitar cambios bruscos',
+        humidity: '50-70%',
+        socialNeeds: 'CRÍTICO: Necesitan 4-6+ horas de atención DIARIA. Son extremadamente demandantes y pueden desarrollar problemas graves sin atención suficiente'
+      },
+      health: {
+        commonIssues: [
+          'ARRANCADO DE PLUMAS (muy común por estrés, soledad)',
+          'Auto-mutilación por problemas emocionales',
+          'Gritos excesivos por falta de atención',
+          'Enfermedad del pico y las plumas de psitacidas (PBFD)',
+          'Aspergilosis',
+          'Obesidad',
+          'Enfermedad hepática',
+          'Problemas de comportamiento (agresión, fobias)'
+        ],
+        preventiveCare: [
+          'Atención y estimulación DIARIA consistente',
+          'Rutinas predecibles',
+          'Enriquecimiento ambiental constante',
+          'Dieta balanceada estricta',
+          'Baños frecuentes',
+          'Socialización continua',
+          'Entrenamiento de comportamiento',
+          'Chequeos veterinarios cada 6 meses'
+        ],
+        veterinaryVisits: 'Cada 6 meses MÍNIMO con veterinario especializado en aves exóticas'
+      },
+      breeding: {
+        maturityAge: '3-7 años dependiendo de la especie',
+        breedingSeason: 'Primavera principalmente',
+        clutchSize: '2-3 huevos (varía según especie)',
+        incubationPeriod: '24-30 días, polluelos destetados a las 12-16 semanas'
+      },
+      behavior: {
+        vocalLevel: 5,
+        activityLevel: 5,
+        sociability: 5,
+        trainability: 5,
+        notes: [
+          'EXTREMADAMENTE vocales: gritos muy fuertes (hasta 120 decibeles)',
+          'Requieren atención CONSTANTE, como un niño pequeño',
+          'Polvo de plumas abundante (consideración para alergias)',
+          'Pueden desarrollar "behavior problems" graves si se descuidan',
+          'Forman vínculos tan fuertes que pueden ser problemáticos',
+          'Son destructores naturales potentes',
+          'Necesitan espacio amplio para extender alas completamente',
+          'NO son adecuadas para la mayoría de hogares',
+          'Pueden ser territoriales y agresivas en época hormonal'
+        ]
+      },
+      habitat: {
+        origin: 'Australia, Indonesia, Filipinas, Nueva Guinea',
+        naturalHabitat: 'Bosques, áreas boscosas, sabanas',
+        cageRequirements: [
+          'Jaula EXTRA GRANDE o aviario (mínimo 120x90x180 cm)',
+          'Barrotes MUY resistentes (pueden doblar metal débil)',
+          'Múltiples perchas robustas de madera natural',
+          'ABUNDANTES juguetes destructibles',
+          'Zona de forrajeo compleja',
+          'Área de juego fuera de jaula',
+          'Sistema de ducha o bañera grande',
+          'Idealmente: habitación dedicada'
+        ],
+        enrichment: [
+          'Rotación DIARIA de juguetes (mínimo 15-20 juguetes)',
+          'Juguetes para destruir (madera, cartón, papel)',
+          'Rompecabezas complejos de forrajeo',
+          'Entrenamiento diario extenso (1-2 horas)',
+          'Tiempo libre supervisado (4-6+ horas)',
+          'Interacción social constante',
+          'Actividades variadas (baile, juegos, exploración)',
+          'Ramas grandes para trepar y destruir'
+        ]
+      },
+      compatibility: {
+        withOwnSpecies: 'Buena en parejas establecidas. Pueden ser territoriales',
+        withOtherSpecies: 'Baja a moderada. Su tamaño puede intimidar a aves más pequeñas',
+        withChildren: 'Baja. Su tamaño, pico fuerte y demandas las hacen inadecuadas para hogares con niños pequeños'
+      },
+      tips: [
+        'ADVERTENCIA: NO son para principiantes o dueños casuales',
+        'Requieren compromiso de 40-70+ AÑOS',
+        'Son EXTREMADAMENTE ruidosas (problemas con vecinos garantizados)',
+        'Polvo de plumas constante (limpieza diaria necesaria)',
+        'Costosas de mantener (comida, juguetes, veterinario)',
+        'Pueden destruir muebles y paredes si salen de jaula',
+        'Requieren veterinario especializado en aves exóticas',
+        'Arrancado de plumas es COMÚN si no reciben atención adecuada',
+        'Considera seriamente ADOPTAR en lugar de comprar',
+        'Muchas cacatúas son abandonadas por ser "demasiado"',
+        'Necesitan rutinas ESTRICTAS y consistentes',
+        'Son como tener un niño pequeño de por vida',
+        'Solo adquiere si puedes dedicar 4-6+ horas DIARIAS',
+        'Investiga MUCHO antes de comprometerte',
+        'Considera especies más pequeñas si dudas'
+      ]
     }
   ];
 
