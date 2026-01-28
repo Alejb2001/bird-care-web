@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ghpages": "ng build --base-href /bird-care-blog/",
+    "postbuild:ghpages": "node scripts/post-build.js",
+    "deploy": "npm run build:ghpages && npx angular-cli-ghpages --dir=dist/bird-care-blog/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
