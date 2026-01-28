@@ -46,6 +46,33 @@ export class BlogFeedComponent {
       date: '2026-01-15',
       readTime: '6 min',
       image: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=500&q=80'
+    },
+    {
+      id: 4,
+      title: 'Agapornis: El Poder del Vínculo de Pareja',
+      excerpt: 'Todo sobre los inseparables: por qué necesitan compañía constante, cómo criar una pareja feliz y qué hacer si tienes uno solo.',
+      category: 'Especies',
+      date: '2026-01-22',
+      readTime: '8 min',
+      image: 'https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=500&q=80'
+    },
+    {
+      id: 5,
+      title: 'Entrenando a tu Ninfa: Trucos y Silbidos',
+      excerpt: 'Las ninfas son aves inteligentes. Aprende técnicas de entrenamiento con refuerzo positivo y cómo enseñarles melodías.',
+      category: 'Comportamiento',
+      date: '2026-01-24',
+      readTime: '6 min',
+      image: 'https://images.unsplash.com/photo-1597318001819-c365bdfa6e91?w=500&q=80'
+    },
+    {
+      id: 6,
+      title: 'Periquitos: ¿Pueden Aprender a Hablar?',
+      excerpt: 'Descubre el potencial vocal de los periquitos australianos. Técnicas efectivas para enseñarles palabras y sonidos.',
+      category: 'Especies',
+      date: '2026-01-26',
+      readTime: '5 min',
+      image: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=500&q=80'
     }
   ];
 }

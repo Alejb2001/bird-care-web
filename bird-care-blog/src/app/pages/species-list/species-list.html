@@ -1,0 +1,153 @@
+<div class="min-h-screen bg-gradient-to-b from-green-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Guía de Especies de Aves</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Conoce las especies más populares de aves domésticas. Descubre sus características,
+        cuidados específicos y cómo proporcionarles el mejor hogar.
+      </p>
+    </div>
+
+    <!-- Grid de especies -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <a *ngFor="let species of allSpecies"
+         [routerLink]="['/especies', species.id]"
+         class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+
+        <!-- Imagen -->
+        <div class="relative h-64 overflow-hidden">
+          <img
+            [src]="species.image"
+            [alt]="species.commonName"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+          >
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+            <span class="text-sm font-semibold text-gray-700">{{ species.characteristics.lifespan }}</span>
+          </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="p-6">
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">{{ species.commonName }}</h2>
+          <p class="text-sm italic text-gray-600 mb-3">{{ species.scientificName }}</p>
+          <p class="text-gray-700 mb-4 line-clamp-3">{{ species.description }}</p>
+
+          <!-- Características destacadas -->
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-green-50 p-3 rounded-lg">
+              <div class="text-xs text-gray-600 mb-1">Tamaño</div>
+              <div class="text-sm font-semibold text-gray-900">{{ species.characteristics.size }}</div>
+            </div>
+            <div class="bg-blue-50 p-3 rounded-lg">
+              <div class="text-xs text-gray-600 mb-1">Peso</div>
+              <div class="text-sm font-semibold text-gray-900">{{ species.characteristics.weight }}</div>
+            </div>
+          </div>
+
+          <!-- Temperamento tags -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span *ngFor="let trait of species.characteristics.temperament.slice(0, 3)"
+                  class="px-3 py-1 bg-nature-green-light text-nature-green-dark rounded-full text-xs font-medium">
+              {{ trait }}
+            </span>
+          </div>
+
+          <!-- Indicadores de comportamiento -->
+          <div class="grid grid-cols-4 gap-2 mb-4">
+            <div class="text-center">
+              <div class="text-xs text-gray-600 mb-1">Vocal</div>
+              <div class="flex justify-center">
+                <div class="flex">
+                  <span *ngFor="let i of [1,2,3,4,5]"
+                        [class]="i <= species.behavior.vocalLevel ? 'text-blue-500' : 'text-gray-300'"
+                        class="text-sm">●</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xs text-gray-600 mb-1">Activo</div>
+              <div class="flex justify-center">
+                <div class="flex">
+                  <span *ngFor="let i of [1,2,3,4,5]"
+                        [class]="i <= species.behavior.activityLevel ? 'text-green-500' : 'text-gray-300'"
+                        class="text-sm">●</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xs text-gray-600 mb-1">Social</div>
+              <div class="flex justify-center">
+                <div class="flex">
+                  <span *ngFor="let i of [1,2,3,4,5]"
+                        [class]="i <= species.behavior.sociability ? 'text-purple-500' : 'text-gray-300'"
+                        class="text-sm">●</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xs text-gray-600 mb-1">Entrena</div>
+              <div class="flex justify-center">
+                <div class="flex">
+                  <span *ngFor="let i of [1,2,3,4,5]"
+                        [class]="i <= species.behavior.trainability ? 'text-yellow-500' : 'text-gray-300'"
+                        class="text-sm">●</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de ver más -->
+          <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+            <span class="text-nature-green-dark font-semibold">Ver guía completa</span>
+            <svg class="w-5 h-5 text-nature-green-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Sección informativa adicional -->
+    <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">¿Cómo elegir la especie adecuada?</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-nature-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-nature-green-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Tiempo Disponible</h3>
+          <p class="text-gray-600">
+            Considera cuánto tiempo puedes dedicar diariamente a tu ave. Algunas especies requieren 4-6 horas de interacción.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Espacio en Casa</h3>
+          <p class="text-gray-600">
+            Las aves necesitan jaulas espaciosas y tiempo de vuelo. Asegúrate de tener el espacio adecuado.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">Estilo de Vida</h3>
+          <p class="text-gray-600">
+            Algunas aves son ruidosas, otras tranquilas. Elige según tu entorno y tolerancia al ruido.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
