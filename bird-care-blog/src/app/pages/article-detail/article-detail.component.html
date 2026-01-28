@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
-<article class="min-h-screen bg-gray-50">
-  <!-- Header del artículo -->
+<article *ngIf="article" class="min-h-screen bg-gray-50">
+  <!-- Header del articulo -->
   <header class="bg-white shadow-sm">
     <div class="max-w-4xl mx-auto px-4 py-8">
       <!-- Breadcrumb -->
@@ -11,12 +11,12 @@
         <span class="text-gray-600">{{ article.category }}</span>
       </nav>
 
-      <!-- Título -->
+      <!-- Titulo -->
       <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">
         {{ article.title }}
       </h1>
 
-      <!-- Meta información -->
+      <!-- Meta informacion -->
       <div class="flex flex-wrap items-center gap-4 text-gray-600">
         <span class="inline-flex items-center bg-nature-green-dark text-white px-4 py-1 rounded-full text-sm font-semibold">
           {{ article.category }}
@@ -52,14 +52,46 @@
     />
   </div>
 
-  <!-- Contenido del artículo -->
+  <!-- Contenido del articulo -->
   <div class="max-w-4xl mx-auto px-4 py-8">
     <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
       <div class="prose prose-lg max-w-none" [innerHTML]="article.content"></div>
 
+      <!-- Fuentes y Referencias -->
+      <div *ngIf="article.sources && article.sources.length > 0" class="mt-12 pt-8 border-t border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+          <svg class="w-6 h-6 mr-2 text-nature-green-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          Fuentes y Referencias
+        </h3>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <ul class="space-y-3">
+            <li *ngFor="let source of article.sources" class="flex items-start">
+              <svg class="w-5 h-5 mr-3 mt-0.5 text-nature-green-dark flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">
+                <ng-container *ngIf="source.url; else noUrl">
+                  <a [href]="source.url" target="_blank" rel="noopener noreferrer" class="text-nature-green-dark hover:underline font-medium">
+                    {{ source.name }}
+                  </a>
+                </ng-container>
+                <ng-template #noUrl>
+                  {{ source.name }}
+                </ng-template>
+              </span>
+            </li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-500 italic">
+            Este articulo ha sido revisado para garantizar la precision de la informacion. Siempre consulta con un veterinario aviar certificado para consejos especificos sobre tu ave.
+          </p>
+        </div>
+      </div>
+
       <!-- Compartir -->
       <div class="mt-12 pt-8 border-t border-gray-200">
-        <h3 class="text-xl font-bold text-gray-800 mb-4">Compartir este artículo</h3>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Compartir este articulo</h3>
         <div class="flex space-x-4">
           <button (click)="shareOnFacebook()" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">
             Facebook
@@ -74,9 +106,9 @@
       </div>
     </div>
 
-    <!-- Artículos relacionados -->
+    <!-- Articulos relacionados -->
     <div class="mt-16">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8">Artículos Relacionados</h2>
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Articulos Relacionados</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <a
           *ngFor="let related of relatedArticles"
@@ -100,7 +132,7 @@
       </div>
     </div>
 
-    <!-- Botón volver -->
+    <!-- Boton volver -->
     <div class="mt-12 text-center">
       <a
         routerLink="/"
@@ -114,5 +146,13 @@
     </div>
   </div>
 </article>
+
+<!-- Loading state -->
+<div *ngIf="!article" class="min-h-screen bg-gray-50 flex items-center justify-center">
+  <div class="text-center">
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-nature-green-dark mx-auto mb-4"></div>
+    <p class="text-gray-600">Cargando articulo...</p>
+  </div>
+</div>
 
 <app-footer></app-footer>
