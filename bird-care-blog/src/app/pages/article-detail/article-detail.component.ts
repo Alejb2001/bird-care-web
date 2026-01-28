@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
@@ -12,6 +12,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class ArticleDetailComponent implements OnInit {
   articleId: string | null = null;
+  private isBrowser: boolean;
 
   // Datos de ejemplo del artículo
   article = {
@@ -60,10 +61,35 @@ export class ArticleDetailComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit() {
     this.articleId = this.route.snapshot.paramMap.get('id');
     // En una aplicación real, aquí cargarías el artículo desde un servicio usando el ID
+  }
+
+  shareOnFacebook() {
+    if (!this.isBrowser) return;
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+  }
+
+  shareOnTwitter() {
+    if (!this.isBrowser) return;
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(this.article.title + ' - Cuidado de Aves');
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+  }
+
+  shareOnWhatsApp() {
+    if (!this.isBrowser) return;
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(this.article.title + ' - Lee más en: ');
+    window.open(`https://wa.me/?text=${text}${url}`, '_blank');
   }
 }

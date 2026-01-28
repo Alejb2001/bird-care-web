@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+
+<main class="min-h-screen bg-gradient-to-br from-gray-50 to-nature-green-light flex items-center justify-center">
+  <div class="max-w-2xl mx-auto px-4 py-16 text-center">
+    <!-- Icono de la red social -->
+    <div class="mb-8">
+      <div [class]="currentPlatform.color + ' w-24 h-24 rounded-full mx-auto flex items-center justify-center shadow-xl'">
+        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path [attr.d]="currentPlatform.icon"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Próximamente en {{ currentPlatform.name }}
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-8">
+        Estamos trabajando en nuestra presencia en {{ currentPlatform.name }}.
+        Pronto podrás seguirnos para recibir consejos diarios sobre el cuidado de tus aves.
+      </p>
+
+      <!-- Ilustración -->
+      <div class="my-8">
+        <svg class="w-48 h-48 mx-auto text-nature-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+
+      <!-- Suscripción al newsletter -->
+      <div class="bg-nature-green-light rounded-xl p-6 mb-8">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Mientras tanto...</h3>
+        <p class="text-gray-600 mb-4">
+          Suscríbete a nuestro newsletter para no perderte ninguna actualización.
+        </p>
+        <a
+          routerLink="/"
+          fragment="newsletter"
+          class="inline-block bg-nature-green-dark text-white px-6 py-3 rounded-full font-semibold hover:bg-nature-green transition-all"
+        >
+          Ir al Newsletter
+        </a>
+      </div>
+
+      <!-- Botón volver -->
+      <a
+        routerLink="/"
+        class="inline-flex items-center text-nature-green-dark font-semibold hover:underline"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

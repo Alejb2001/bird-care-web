@@ -4,6 +4,9 @@ import { ArticleDetailComponent } from './pages/article-detail/article-detail.co
 import { SpeciesList } from './pages/species-list/species-list';
 import { SpeciesDetail } from './pages/species-detail/species-detail';
 import { Sources } from './pages/sources/sources';
+import { AllArticlesComponent } from './pages/all-articles/all-articles.component';
+import { SocialComponent } from './pages/social/social.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +16,14 @@ export const routes: Routes = [
   {
     path: 'article/:id',
     component: ArticleDetailComponent
+  },
+  {
+    path: 'articulos',
+    component: AllArticlesComponent
+  },
+  {
+    path: 'categoria/:slug',
+    component: CategoryComponent
   },
   {
     path: 'especies',
@@ -25,6 +36,10 @@ export const routes: Routes = [
   {
     path: 'fuentes',
     component: Sources
+  },
+  {
+    path: 'social/:platform',
+    component: SocialComponent
   },
   {
     path: '**',
