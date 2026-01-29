@@ -449,7 +449,7 @@ export class BirdSpeciesService {
       commonName: 'Diamante Mandarín',
       scientificName: 'Taeniopygia guttata',
       description: 'El diamante mandarín es un pinzón australiano pequeño y activo, perfecto para principiantes. Son aves sociables que viven mejor en parejas o grupos pequeños. Su canto es suave y agradable, y son fáciles de mantener. Son ideales para quienes desean observar el comportamiento natural de las aves sin necesidad de manipulación constante.',
-      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=PLACEHOLDER%0ADiamante+Mandarin',
+      image: 'images/especies/especie-diamante-mandarin.avif',
       characteristics: {
         size: '10-11 cm de longitud',
         weight: '12-15 gramos',
@@ -557,7 +557,7 @@ export class BirdSpeciesService {
       commonName: 'Cotorra Argentina',
       scientificName: 'Myiopsitta monachus',
       description: 'La cotorra argentina, también conocida como cotorra monje, es un loro pequeño a mediano extremadamente inteligente y social. Son aves muy vocales y activas que pueden aprender trucos y palabras. Forman vínculos fuertes con sus cuidadores y necesitan mucha estimulación mental. Son ideales para dueños experimentados que pueden dedicarles tiempo y atención.',
-      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=PLACEHOLDER%0ACotorra+Argentina',
+      image: 'images/especies/especie-cotorra-argentina.avif',
       characteristics: {
         size: '28-31 cm de longitud',
         weight: '100-150 gramos',
@@ -671,7 +671,7 @@ export class BirdSpeciesService {
       commonName: 'Loro del Senegal',
       scientificName: 'Poicephalus senegalus',
       description: 'El loro del Senegal es un loro africano de tamaño mediano, ideal para apartamentos y dueños intermedios. Son relativamente tranquilos para ser loros, inteligentes y cariñosos con sus dueños. Pueden aprender a hablar algunas palabras y son excelentes compañeros. Son menos demandantes que loros grandes pero igual de afectuosos.',
-      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=PLACEHOLDER%0ALoro+del+Senegal',
+      image: 'images/especies/especie-loro-senegal.avif',
       characteristics: {
         size: '23-25 cm de longitud',
         weight: '120-170 gramos',
@@ -786,7 +786,7 @@ export class BirdSpeciesService {
       commonName: 'Cacatúa',
       scientificName: 'Cacatuidae (varias especies)',
       description: 'Las cacatúas son loros grandes originarios de Australia y región circundante, famosos por su cresta distintiva y personalidad extremadamente cariñosa. Son aves muy inteligentes y demandantes que requieren MUCHA atención diaria. Forman vínculos profundos con sus cuidadores y pueden sufrir problemas de comportamiento graves si se descuidan. Solo para dueños MUY experimentados y comprometidos.',
-      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=PLACEHOLDER%0ACacatua',
+      image: 'images/especies/especie-cacatua.avif',
       characteristics: {
         size: '30-60 cm dependiendo de la especie',
         weight: '300-1000 gramos (varía según especie)',
