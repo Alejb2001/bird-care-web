@@ -26,7 +26,7 @@ export class ArticlesService {
       category: 'Alimentacion',
       date: '2026-01-20',
       readTime: '8 min',
-      image: 'https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=800&q=80',
+      image: 'images/articulos/articulo-alimento-canarios.avif',
       author: 'Dra. Maria Gonzalez, Veterinaria Aviar',
       content: `
         <h2>Introduccion: La Importancia de una Dieta Balanceada</h2>
@@ -106,7 +106,7 @@ export class ArticlesService {
       category: 'Habitat',
       date: '2026-01-18',
       readTime: '10 min',
-      image: 'https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=800&q=80',
+      image: 'images/articulos/articulo-habitat-periquitos.avif',
       author: 'Dr. Carlos Rodriguez, Especialista en Aves Exoticas',
       content: `
         <h2>Introduccion</h2>
@@ -206,7 +206,7 @@ export class ArticlesService {
       category: 'Salud',
       date: '2026-01-15',
       readTime: '12 min',
-      image: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&q=80',
+      image: 'images/articulos/articulo-enfermedades.avif',
       author: 'Dra. Ana Fernandez, Medica Veterinaria Especialista en Aves',
       content: `
         <h2>Por Que las Aves Ocultan Sus Enfermedades</h2>
@@ -314,7 +314,7 @@ export class ArticlesService {
       category: 'Especies',
       date: '2026-01-22',
       readTime: '9 min',
-      image: 'https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=800&q=80',
+      image: 'images/articulos/articulo-agapornis-pareja.avif',
       author: 'Dr. Pablo Martinez, Etologo Aviar',
       content: `
         <h2>Por Que se Llaman "Inseparables"</h2>
@@ -403,7 +403,7 @@ export class ArticlesService {
       category: 'Comportamiento',
       date: '2026-01-24',
       readTime: '11 min',
-      image: 'https://images.unsplash.com/photo-1597318001819-c365bdfa6e91?w=800&q=80',
+      image: 'images/articulos/articulo-entretenimiento-ninfa.avif',
       author: 'Laura Sanchez, Entrenadora de Aves Certificada',
       content: `
         <h2>La Inteligencia de las Ninfas</h2>
@@ -512,7 +512,7 @@ export class ArticlesService {
       category: 'Especies',
       date: '2026-01-26',
       readTime: '8 min',
-      image: 'https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=800&q=80',
+      image: 'images/articulos/articulo-habitat-periquitos.avif',
       author: 'Dr. Roberto Vega, Investigador en Cognicion Aviar',
       content: `
         <h2>El Potencial Vocal del Periquito</h2>
@@ -614,7 +614,7 @@ export class ArticlesService {
       category: 'Salud',
       date: '2026-01-12',
       readTime: '9 min',
-      image: 'https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=800&q=80',
+      image: 'images/articulos/articulo-muda-aves.webp',
       author: 'Dra. Elena Torres, Veterinaria Aviar',
       content: `
         <h2>Que es la Muda?</h2>
@@ -714,7 +714,7 @@ export class ArticlesService {
       category: 'Salud',
       date: '2026-01-10',
       readTime: '7 min',
-      image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80',
+      image: 'images/articulos/articulo-plantas-aves.avif',
       author: 'Dra. Patricia Luna, Toxicologa Veterinaria',
       content: `
         <h2>Por Que las Plantas son un Riesgo</h2>
@@ -808,7 +808,7 @@ export class ArticlesService {
       category: 'Habitat',
       date: '2026-01-08',
       readTime: '10 min',
-      image: 'https://images.unsplash.com/photo-1520808663317-647b476a81b9?w=800&q=80',
+      image: 'images/articulos/articulo-enriquecimiento.webp',
       author: 'Dr. Miguel Herrera, Especialista en Comportamiento Aviar',
       content: `
         <h2>Que es el Enriquecimiento Ambiental?</h2>
@@ -935,7 +935,7 @@ export class ArticlesService {
       category: 'Salud',
       date: '2026-01-05',
       readTime: '12 min',
-      image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80',
+      image: 'images/articulos/articulo-primeros-auxilios.avif',
       author: 'Dra. Claudia Mendez, Veterinaria de Emergencias',
       content: `
         <h2>Preparacion: Kit de Primeros Auxilios para Aves</h2>
@@ -1091,7 +1091,7 @@ export class ArticlesService {
       category: 'Especies',
       date: '2026-01-03',
       readTime: '8 min',
-      image: 'https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?w=800&q=80',
+      image: 'images/articulos/articulo-dismorfismo.avif',
       author: 'Dr. Fernando Ruiz, Ornitolog',
       content: `
         <h2>Por Que Importa Conocer el Sexo de tu Ave?</h2>
@@ -1224,7 +1224,7 @@ export class ArticlesService {
       category: 'Cuidados',
       date: '2026-01-01',
       readTime: '11 min',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+      image: 'images/articulos/articulo-viajar-aves.avif',
       author: 'Dra. Sofia Navarro, Veterinaria Aviar',
       content: `
         <h2>Preparacion General para Viajar</h2>

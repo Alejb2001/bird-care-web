@@ -50,7 +50,7 @@ export class ArticleDetailComponent implements OnInit {
   shareOnTwitter() {
     if (!this.isBrowser || !this.article) return;
     const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent(this.article.title + ' - Cuidado de Aves');
+    const text = encodeURIComponent(this.article.title + ' - Entre Alas');
     window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
   }
 
