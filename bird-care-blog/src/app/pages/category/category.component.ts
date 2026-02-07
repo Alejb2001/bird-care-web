@@ -89,7 +89,9 @@ export class CategoryComponent implements OnInit {
     };
     const categoryName = categoryMap[this.categorySlug];
     if (categoryName) {
-      this.articles = this.articlesService.getArticlesByCategory(categoryName);
+      this.articlesService.getArticlesByCategory(categoryName).subscribe(articles => {
+        this.articles = articles;
+      });
     }
   }
 

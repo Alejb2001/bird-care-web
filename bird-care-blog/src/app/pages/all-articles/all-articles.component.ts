@@ -22,12 +22,14 @@ export class AllArticlesComponent implements OnInit {
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit(): void {
-    this.allArticles = this.articlesService.getAllArticles();
-    this.filteredArticles = [...this.allArticles];
+    this.articlesService.getAllArticles().subscribe(articles => {
+      this.allArticles = articles;
+      this.filteredArticles = [...articles];
 
-    // Extraer categorias unicas
-    const uniqueCategories = new Set(this.allArticles.map(a => a.category));
-    this.categories = ['Todas', ...Array.from(uniqueCategories)];
+      // Extraer categorias unicas
+      const uniqueCategories = new Set(articles.map(a => a.category));
+      this.categories = ['Todas', ...Array.from(uniqueCategories)];
+    });
   }
 
   filterByCategory(category: string): void {

@@ -15,6 +15,8 @@ export class BlogFeedComponent implements OnInit {
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit(): void {
-    this.articles = this.articlesService.getFeaturedArticles(6);
+    this.articlesService.getFeaturedArticles(6).subscribe(articles => {
+      this.articles = articles;
+    });
   }
 }

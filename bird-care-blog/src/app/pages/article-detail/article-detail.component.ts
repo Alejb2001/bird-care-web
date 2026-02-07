@@ -30,15 +30,18 @@ export class ArticleDetailComponent implements OnInit {
     const idParam = this.route.snapshot.paramMap.get('id');
     this.articleId = idParam ? parseInt(idParam, 10) : 1;
 
-    this.article = this.articlesService.getArticleById(this.articleId) || this.articlesService.getArticleById(1)!;
+    this.articlesService.getArticleById(this.articleId).subscribe(article => {
+      this.article = article || null;
+    });
 
-    const related = this.articlesService.getRelatedArticles(this.articleId, 2);
-    this.relatedArticles = related.map(a => ({
+    this.articlesService.getRelatedArticles(this.articleId, 2).subscribe(related => {
+      this.relatedArticles = related.map(a => ({
       id: a.id,
       title: a.title,
       category: a.category,
       image: a.image
-    }));
+      }));
+    });
   }
 
   shareOnFacebook() {

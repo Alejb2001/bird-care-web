@@ -23,18 +23,22 @@ export class SpeciesDetail implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      this.species = this.speciesService.getSpeciesById(id);
 
-      if (!this.species) {
-        this.router.navigate(['/especies']);
-        return;
-      }
+      this.speciesService.getSpeciesById(id).subscribe(species => {
+        this.species = species;
+
+        if (!this.species) {
+          this.router.navigate(['/especies']);
+          return;
+        }
+      });
 
       // Get related species (all others)
-      this.relatedSpecies = this.speciesService
-        .getAllSpecies()
-        .filter(s => s.id !== id)
-        .slice(0, 3);
+      this.speciesService.getAllSpecies().subscribe(allSpecies => {
+        this.relatedSpecies = allSpecies
+          .filter(s => s.id !== id)
+          .slice(0, 3);
+      });
     });
   }
 

@@ -16,6 +16,8 @@ export class SpeciesList implements OnInit {
   constructor(private speciesService: BirdSpeciesService) {}
 
   ngOnInit(): void {
-    this.allSpecies = this.speciesService.getAllSpecies();
+    this.speciesService.getAllSpecies().subscribe(species => {
+      this.allSpecies = species;
+    });
   }
 }
