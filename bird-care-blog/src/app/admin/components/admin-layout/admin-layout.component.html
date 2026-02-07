@@ -1,0 +1,112 @@
+<div class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside
+    [class.w-64]="sidebarOpen"
+    [class.w-20]="!sidebarOpen"
+    class="bg-gray-900 text-white transition-all duration-300 ease-in-out flex flex-col"
+  >
+    <!-- Logo -->
+    <div class="p-4 border-b border-gray-800">
+      <div class="flex items-center" [class.justify-center]="!sidebarOpen">
+        <svg class="h-8 w-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+        </svg>
+        <span *ngIf="sidebarOpen" class="ml-3 text-xl font-bold">Entre Alas</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 overflow-y-auto py-4">
+      <a
+        routerLink="/admin/dashboard"
+        routerLinkActive="bg-gray-800 border-l-4 border-blue-500"
+        class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+        [class.justify-center]="!sidebarOpen"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        <span *ngIf="sidebarOpen" class="ml-3">Dashboard</span>
+      </a>
+
+      <a
+        routerLink="/admin/articles"
+        routerLinkActive="bg-gray-800 border-l-4 border-blue-500"
+        class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+        [class.justify-center]="!sidebarOpen"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        <span *ngIf="sidebarOpen" class="ml-3">Artículos</span>
+      </a>
+
+      <a
+        routerLink="/admin/species"
+        routerLinkActive="bg-gray-800 border-l-4 border-blue-500"
+        class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+        [class.justify-center]="!sidebarOpen"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+        </svg>
+        <span *ngIf="sidebarOpen" class="ml-3">Especies</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Toggle Button -->
+    <div class="p-4 border-t border-gray-800">
+      <button
+        (click)="toggleSidebar()"
+        class="w-full flex items-center justify-center py-2 px-4 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+      >
+        <svg *ngIf="sidebarOpen" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
+        </svg>
+        <svg *ngIf="!sidebarOpen" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <!-- Top Navbar -->
+    <header class="bg-white shadow-sm">
+      <div class="flex items-center justify-between px-6 py-4">
+        <h1 class="text-2xl font-semibold text-gray-800">Panel de Administración</h1>
+
+        <div class="flex items-center space-x-4">
+          <!-- User Menu -->
+          <div class="flex items-center space-x-3">
+            <div class="text-right">
+              <p class="text-sm font-medium text-gray-700">{{ currentUser?.username }}</p>
+              <p class="text-xs text-gray-500">{{ currentUser?.role }}</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold">
+              {{ currentUser?.username?.charAt(0).toUpperCase() }}
+            </div>
+          </div>
+
+          <!-- Logout Button -->
+          <button
+            (click)="logout()"
+            class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            title="Cerrar sesión"
+          >
+            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+            </svg>
+            Salir
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

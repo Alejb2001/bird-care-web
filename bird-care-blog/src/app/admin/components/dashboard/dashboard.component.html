@@ -1,0 +1,142 @@
+<div class="space-y-6">
+  <!-- Header -->
+  <div>
+    <h2 class="text-3xl font-bold text-gray-900">Dashboard</h2>
+    <p class="mt-1 text-sm text-gray-600">Bienvenido al panel de administración</p>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="flex justify-center items-center py-12">
+    <svg class="animate-spin h-12 w-12 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+  </div>
+
+  <!-- Stats Grid -->
+  <div *ngIf="!loading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Total Articles -->
+    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm font-medium text-gray-600">Total Artículos</p>
+          <p class="text-3xl font-bold text-gray-900 mt-2">{{ stats.articles.total }}</p>
+        </div>
+        <div class="p-3 bg-blue-100 rounded-full">
+          <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+      </div>
+      <a routerLink="/admin/articles" class="text-sm text-blue-600 hover:text-blue-800 mt-4 inline-block">
+        Ver todos →
+      </a>
+    </div>
+
+    <!-- Published Articles -->
+    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm font-medium text-gray-600">Artículos Publicados</p>
+          <p class="text-3xl font-bold text-gray-900 mt-2">{{ stats.articles.published }}</p>
+        </div>
+        <div class="p-3 bg-green-100 rounded-full">
+          <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">
+        {{ stats.articles.total > 0 ? ((stats.articles.published / stats.articles.total) * 100).toFixed(0) : 0 }}% del total
+      </p>
+    </div>
+
+    <!-- Total Species -->
+    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-purple-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm font-medium text-gray-600">Total Especies</p>
+          <p class="text-3xl font-bold text-gray-900 mt-2">{{ stats.species.total }}</p>
+        </div>
+        <div class="p-3 bg-purple-100 rounded-full">
+          <svg class="h-8 w-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+        </div>
+      </div>
+      <a routerLink="/admin/species" class="text-sm text-purple-600 hover:text-purple-800 mt-4 inline-block">
+        Ver todas →
+      </a>
+    </div>
+
+    <!-- Published Species -->
+    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-yellow-500">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm font-medium text-gray-600">Especies Publicadas</p>
+          <p class="text-3xl font-bold text-gray-900 mt-2">{{ stats.species.published }}</p>
+        </div>
+        <div class="p-3 bg-yellow-100 rounded-full">
+          <svg class="h-8 w-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">
+        {{ stats.species.total > 0 ? ((stats.species.published / stats.species.total) * 100).toFixed(0) : 0 }}% del total
+      </p>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div *ngIf="!loading" class="bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-lg font-semibold text-gray-900 mb-4">Acciones Rápidas</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a
+        routerLink="/admin/articles/new"
+        class="flex items-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors group"
+      >
+        <div class="flex-shrink-0 p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200">
+          <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <p class="text-sm font-medium text-gray-900">Nuevo Artículo</p>
+          <p class="text-xs text-gray-500">Crear un artículo nuevo</p>
+        </div>
+      </a>
+
+      <a
+        routerLink="/admin/species/new"
+        class="flex items-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors group"
+      >
+        <div class="flex-shrink-0 p-3 bg-purple-100 rounded-lg group-hover:bg-purple-200">
+          <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <p class="text-sm font-medium text-gray-900">Nueva Especie</p>
+          <p class="text-xs text-gray-500">Agregar una especie</p>
+        </div>
+      </a>
+
+      <a
+        href="http://localhost:4200"
+        target="_blank"
+        class="flex items-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors group"
+      >
+        <div class="flex-shrink-0 p-3 bg-green-100 rounded-lg group-hover:bg-green-200">
+          <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <p class="text-sm font-medium text-gray-900">Ver Sitio Público</p>
+          <p class="text-xs text-gray-500">Abrir en nueva pestaña</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
