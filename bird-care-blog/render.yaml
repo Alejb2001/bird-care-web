@@ -6,7 +6,7 @@ services:
     region: oregon
     plan: free
     rootDir: bird-care-blog
-    buildCommand: npm --version && rm -f package-lock.json && npm install --legacy-peer-deps && npm run build:ssr
+    buildCommand: npm ci --include=dev || npm install --include=dev --legacy-peer-deps && npm run build:ssr
     startCommand: npm run serve:ssr
     envVars:
       - key: DATABASE_URL
