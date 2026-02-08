@@ -5,6 +5,7 @@ services:
     env: node
     region: oregon
     plan: free
+    rootDir: bird-care-blog
     buildCommand: npm install && npm run build:ssr
     startCommand: npm run serve:ssr
     envVars:
