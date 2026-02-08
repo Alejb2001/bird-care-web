@@ -16,6 +16,8 @@
             "outputPath": "dist/bird-care-blog",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "ssr": true,
             "polyfills": [
               "zone.js"
             ],

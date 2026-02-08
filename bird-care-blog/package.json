@@ -10,9 +10,9 @@
     "deploy": "npm run build:ghpages && npx angular-cli-ghpages --dir=dist/bird-care-blog/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run bird-care-blog:serve-ssr:development",
-    "serve:ssr": "node dist/bird-care-blog/server/main.js",
-    "build:ssr": "ng build && ng run bird-care-blog:server:production",
+    "dev:ssr": "ng serve --configuration=development",
+    "serve:ssr": "node serve-ssr.js",
+    "build:ssr": "ng build --configuration=production",
     "prerender": "ng run bird-care-blog:prerender:production"
   },
   "private": true,
