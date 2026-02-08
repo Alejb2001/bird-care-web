@@ -9,7 +9,11 @@
     "postbuild:ghpages": "node scripts/post-build.js",
     "deploy": "npm run build:ghpages && npx angular-cli-ghpages --dir=dist/bird-care-blog/browser",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:ssr": "ng run bird-care-blog:serve-ssr:development",
+    "serve:ssr": "node dist/bird-care-blog/server/server.mjs",
+    "build:ssr": "ng build && ng run bird-care-blog:server:production",
+    "prerender": "ng run bird-care-blog:prerender:production"
   },
   "private": true,
   "dependencies": {
@@ -19,9 +23,13 @@
     "@angular/forms": "^19.2.0",
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
+    "@angular/platform-server": "^21.1.3",
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.19",
+    "@tinymce/tinymce-angular": "^9.1.1",
+    "express": "^5.2.1",
     "rxjs": "~7.8.0",
+    "tinymce": "^8.3.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

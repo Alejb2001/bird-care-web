@@ -24,6 +24,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/tinymce",
+                "output": "/tinymce/"
               }
             ],
             "styles": [
@@ -82,6 +87,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/tinymce",
+                "output": "/tinymce/"
               }
             ],
             "styles": [
@@ -89,6 +99,58 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/bird-care-blog/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "bird-care-blog:build:development",
+              "serverTarget": "bird-care-blog:server:development"
+            },
+            "production": {
+              "browserTarget": "bird-care-blog:build:production",
+              "serverTarget": "bird-care-blog:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "bird-care-blog:build:production",
+              "serverTarget": "bird-care-blog:server:production"
+            },
+            "development": {
+              "browserTarget": "bird-care-blog:build:development",
+              "serverTarget": "bird-care-blog:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
