@@ -19,22 +19,7 @@ export function app(): express.Express {
   }));
 
   // All regular routes use the Angular engine
-  server.use('*', (req, res, next) => {
-    angularApp
-      .handle(req)
-      .then(response => {
-        if (response) {
-          res.status(response.status);
-          response.headers.forEach((value, key) => {
-            res.setHeader(key, value);
-          });
-          response.text().then(body => res.send(body));
-        } else {
-          next();
-        }
-      })
-      .catch(next);
-  });
+  server.use('*', createRequestHandler(angularApp.handle.bind(angularApp)));
 
   return server;
 }
