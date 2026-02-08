@@ -11,7 +11,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run bird-care-blog:serve-ssr:development",
-    "serve:ssr": "node dist/bird-care-blog/server/server.mjs",
+    "serve:ssr": "node dist/bird-care-blog/server/main.js",
     "build:ssr": "ng build && ng run bird-care-blog:server:production",
     "prerender": "ng run bird-care-blog:prerender:production"
   },

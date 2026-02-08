@@ -7,7 +7,7 @@ services:
     plan: free
     rootDir: bird-care-blog
     buildCommand: npm ci --include=dev || npm install --include=dev --legacy-peer-deps && npm run build:ssr
-    startCommand: npm run serve:ssr
+    startCommand: node dist/bird-care-blog/server/main.js
     envVars:
       - key: DATABASE_URL
         fromDatabase:
