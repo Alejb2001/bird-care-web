@@ -1,0 +1,49 @@
+title: Entre Alas
+description: Tu fuente confiable de información para el bienestar y cuidado de aves mascota.
+url: ""
+baseurl: ""
+author: Entre Alas
+lang: es
+email: ""
+
+# Configuración de construcción
+markdown: kramdown
+highlighter: rouge
+permalink: /articulos/:year/:month/:day/:title/
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Feed RSS
+feed:
+  path: feed.xml
+
+# Colecciones
+collections:
+  species:
+    output: false
+
+# Valores por defecto para posts
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Entre Alas
+
+# Excluir del sitio generado
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .git
+  - .bundle
+  - COMO-PUBLICAR.md
+  - node_modules

@@ -1,0 +1,64 @@
+<section class="bg-gradient-to-br from-nature-green-light via-white to-nature-yellow-light py-20 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Contenido -->
+      <div class="space-y-6">
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+          Aprende a Cuidar a tus
+          <span class="text-nature-green-dark">Aves Mascota</span>
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed">
+          Guías completas, consejos prácticos y todo lo que necesitas saber para mantener a tus aves felices y saludables.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a
+            href="{{ '/#categories' | relative_url }}"
+            class="bg-nature-green-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-nature-green shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center transition-all">
+            Empieza aquí
+          </a>
+          <a
+            href="{{ '/articulos' | relative_url }}"
+            class="bg-white text-nature-green-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 border-2 border-nature-green-dark shadow-md hover:shadow-lg transform hover:-translate-y-1 text-center transition-all">
+            Ver artículos
+          </a>
+        </div>
+      </div>
+
+      <!-- Ilustración decorativa -->
+      <div class="relative">
+        <div class="bg-nature-yellow-light rounded-full w-full aspect-square flex items-center justify-center shadow-2xl max-w-md mx-auto">
+          <svg class="w-64 h-64 text-nature-green-dark" fill="currentColor" viewBox="0 0 100 100">
+            <!-- Cuerpo del pájaro -->
+            <ellipse cx="50" cy="55" rx="22" ry="18" />
+            <!-- Cabeza -->
+            <circle cx="50" cy="32" r="14" />
+            <!-- Ojo -->
+            <circle cx="55" cy="29" r="3" fill="white"/>
+            <circle cx="56" cy="29" r="1.5" fill="#333"/>
+            <!-- Pico -->
+            <path d="M60 33 L68 31 L60 36 Z" fill="#FFD54F"/>
+            <!-- Ala izquierda -->
+            <path d="M30 50 Q15 40 20 60 Q28 58 30 50" fill="#388E3C"/>
+            <!-- Ala derecha -->
+            <path d="M70 50 Q85 40 80 60 Q72 58 70 50" fill="#388E3C"/>
+            <!-- Cola -->
+            <path d="M40 70 Q50 85 60 70 Q50 75 40 70" fill="#388E3C"/>
+            <!-- Patas -->
+            <line x1="44" y1="72" x2="38" y2="82" stroke="#795548" stroke-width="2"/>
+            <line x1="56" y1="72" x2="62" y2="82" stroke="#795548" stroke-width="2"/>
+            <line x1="38" y1="82" x2="33" y2="80" stroke="#795548" stroke-width="2"/>
+            <line x1="38" y1="82" x2="36" y2="86" stroke="#795548" stroke-width="2"/>
+            <line x1="38" y1="82" x2="41" y2="86" stroke="#795548" stroke-width="2"/>
+            <line x1="62" y1="82" x2="67" y2="80" stroke="#795548" stroke-width="2"/>
+            <line x1="62" y1="82" x2="64" y2="86" stroke="#795548" stroke-width="2"/>
+            <line x1="62" y1="82" x2="59" y2="86" stroke="#795548" stroke-width="2"/>
+          </svg>
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute -top-4 -right-4 w-20 h-20 bg-nature-yellow rounded-full opacity-50 animate-pulse"></div>
+        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-nature-green rounded-full opacity-50 animate-pulse" style="animation-delay: 1s"></div>
+      </div>
+    </div>
+  </div>
+</section>

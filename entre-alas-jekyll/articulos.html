@@ -1,0 +1,161 @@
+---
+layout: default
+title: Todos los Artículos
+permalink: /articulos/
+---
+
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-nature-green-light">
+
+  <!-- Header -->
+  <div class="bg-nature-green-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Todos los Artículos</h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto">
+        Explora nuestra colección completa de guías y consejos sobre el cuidado de aves
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- Barra de búsqueda -->
+    <div class="max-w-xl mx-auto mb-8">
+      <div class="relative">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar artículos..."
+          class="w-full px-6 py-4 pl-12 rounded-full border-2 border-gray-200 focus:border-nature-green-dark focus:outline-none text-lg"
+        />
+        <svg class="w-6 h-6 absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Filtros de categoría -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12" id="category-filters">
+      <button
+        data-category="all"
+        class="category-btn active px-6 py-2 rounded-full font-medium transition-all shadow-sm bg-nature-green-dark text-white">
+        Todos
+      </button>
+      <button
+        data-category="Alimentación"
+        class="category-btn px-6 py-2 rounded-full font-medium transition-all shadow-sm bg-white text-gray-700 hover:bg-nature-green-light">
+        Alimentación
+      </button>
+      <button
+        data-category="Hábitat"
+        class="category-btn px-6 py-2 rounded-full font-medium transition-all shadow-sm bg-white text-gray-700 hover:bg-nature-green-light">
+        Hábitat
+      </button>
+      <button
+        data-category="Salud"
+        class="category-btn px-6 py-2 rounded-full font-medium transition-all shadow-sm bg-white text-gray-700 hover:bg-nature-green-light">
+        Salud
+      </button>
+      <button
+        data-category="Especies"
+        class="category-btn px-6 py-2 rounded-full font-medium transition-all shadow-sm bg-white text-gray-700 hover:bg-nature-green-light">
+        Especies
+      </button>
+    </div>
+
+    <!-- Contador de resultados -->
+    <p class="text-center text-gray-600 mb-8" id="results-count"></p>
+
+    <!-- Grid de artículos -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+      {% for post in site.posts %}
+      <article
+        class="article-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden group"
+        data-category="{{ post.category }}"
+        data-title="{{ post.title | downcase }}"
+        data-excerpt="{{ post.excerpt | strip_html | downcase | truncatewords: 30 }}"
+        data-tags="{{ post.tags | join: ' ' | downcase }}"
+      >
+        <a href="{{ post.url | relative_url }}" class="block h-full">
+          <!-- Imagen -->
+          <div class="relative h-56 bg-gray-200 overflow-hidden">
+            {% if post.image %}
+            <img
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.title }}"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+            {% else %}
+            <div class="w-full h-full bg-nature-green-light flex items-center justify-center">
+              <svg class="w-20 h-20 text-nature-green-dark opacity-40" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+              </svg>
+            </div>
+            {% endif %}
+            {% if post.category %}
+            <div class="absolute top-4 left-4">
+              <span class="bg-nature-green-dark text-white px-3 py-1 rounded-full text-sm font-semibold">
+                {{ post.category }}
+              </span>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Contenido -->
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                {{ post.date | date: "%d/%m/%Y" }}
+              </span>
+              {% if post.read_time %}
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                {{ post.read_time }} min
+              </span>
+              {% endif %}
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-nature-green-dark transition-colors">
+              {{ post.title }}
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed mb-4">
+              {{ post.excerpt | strip_html | truncatewords: 20 }}
+            </p>
+
+            <div class="flex items-center text-nature-green-dark font-semibold group-hover:translate-x-2 transition-transform">
+              <span>Leer más</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Mensaje sin resultados -->
+    <div id="no-results" class="text-center py-16 hidden">
+      <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="text-xl text-gray-600">No se encontraron artículos. Intenta con otro término.</p>
+    </div>
+
+    <!-- Botón volver -->
+    <div class="text-center mt-12">
+      <a href="{{ '/' | relative_url }}" class="inline-flex items-center bg-nature-green-dark text-white px-8 py-4 rounded-full font-semibold hover:bg-nature-green shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+  </div>
+</div>
