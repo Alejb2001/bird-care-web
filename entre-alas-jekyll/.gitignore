@@ -6,3 +6,4 @@ vendor/
 .bundle/
 Gemfile.lock
 COMO-PUBLICAR.md
+.claude
