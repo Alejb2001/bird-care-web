@@ -26,18 +26,22 @@ jobs:
         with:
           ruby-version: "3.2"
           bundler-cache: true
-          working-directory: entre-alas-jekyll
+          working-directory: ./entre-alas-jekyll
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v4
 
       - name: Build Jekyll
-        working-directory: entre-alas-jekyll
-        run: bundle exec jekyll build
+        working-directory: ./entre-alas-jekyll
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: entre-alas-jekyll/_site
+          path: ./entre-alas-jekyll/_site
 
   deploy:
     environment:
