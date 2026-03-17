@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
-gem "jekyll-feed", "~> 0.17"
-gem "jekyll-sitemap", "~> 1.4"
+gem "github-pages", group: :jekyll_plugins
 
 # Windows y JRuby no incluyen archivos de zona horaria
 platforms :windows, :jruby do
