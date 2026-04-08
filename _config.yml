@@ -46,4 +46,5 @@ exclude:
   - .git
   - .bundle
   - COMO-PUBLICAR.md
+  - _plantilla-articulo.md
   - node_modules

@@ -153,7 +153,82 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ==========================================
-  // 4. SCROLL SUAVE PARA ANCLAS (#categories, #blog)
+  // 4. BARRA DE PROGRESO DE LECTURA
+  // ==========================================
+  var readingProgress = document.getElementById('reading-progress');
+  if (readingProgress) {
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      readingProgress.style.width = Math.min(progress, 100) + '%';
+    }, { passive: true });
+  }
+
+  // ==========================================
+  // 5. TABLA DE CONTENIDOS AUTOMÁTICA
+  // ==========================================
+  var articleContent = document.querySelector('.article-content');
+  if (articleContent) {
+    var tocHeadings = articleContent.querySelectorAll('h2, h3');
+    if (tocHeadings.length >= 3) {
+      var toc = document.createElement('nav');
+      toc.className = 'article-toc';
+
+      var tocTitle = document.createElement('p');
+      tocTitle.className = 'article-toc__title';
+      tocTitle.textContent = 'Contenido';
+      toc.appendChild(tocTitle);
+
+      var tocList = document.createElement('ul');
+      tocHeadings.forEach(function (heading) {
+        if (!heading.id) return;
+        var li = document.createElement('li');
+        li.className = 'article-toc__item' + (heading.tagName === 'H3' ? ' article-toc__item--sub' : '');
+        var a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = heading.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      toc.appendChild(tocList);
+      articleContent.insertBefore(toc, articleContent.firstChild);
+    }
+  }
+
+  // ==========================================
+  // 6. COPIAR ENLACE AL PORTAPAPELES
+  // ==========================================
+  var copyLinkBtn = document.getElementById('copy-link-btn');
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        var feedback = document.getElementById('copy-feedback');
+        if (feedback) {
+          feedback.classList.remove('hidden');
+          setTimeout(function () { feedback.classList.add('hidden'); }, 2500);
+        }
+      });
+    });
+  }
+
+  // ==========================================
+  // 7. COMPARTIR NATIVO (Web Share API)
+  // ==========================================
+  var nativeShareBtn = document.getElementById('native-share-btn');
+  if (nativeShareBtn && navigator.share) {
+    nativeShareBtn.classList.remove('hidden');
+    nativeShareBtn.addEventListener('click', function () {
+      navigator.share({
+        title: document.title,
+        url: window.location.href
+      }).catch(function () {}); // silence AbortError si el usuario cancela
+    });
+  }
+
+  // ==========================================
+  // 8. SCROLL SUAVE PARA ANCLAS (#categories, #blog)
   // ==========================================
   document.querySelectorAll('a[href^="#"], a[href*="/#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {

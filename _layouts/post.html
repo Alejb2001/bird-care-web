@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- Barra de progreso de lectura -->
+<div id="reading-progress" class="fixed top-16 left-0 h-1 bg-nature-green-dark z-40" style="width: 0%"></div>
+
 <article class="min-h-screen bg-gray-50">
 
   <!-- Header del artículo -->
@@ -14,7 +17,7 @@ layout: default
         <span class="mx-2 text-gray-400">/</span>
         <a href="{{ '/articulos' | relative_url }}" class="text-nature-green-dark hover:underline">Artículos</a>
         <span class="mx-2 text-gray-400">/</span>
-        <span class="text-gray-600">{{ page.category }}</span>
+        <a href="{{ '/articulos/' | relative_url }}?categoria={{ page.category | url_encode }}" class="text-nature-green-dark hover:underline">{{ page.category }}</a>
       </nav>
 
       <!-- Título -->
@@ -116,7 +119,7 @@ layout: default
       {% endif %}
 
       <!-- Compartir -->
-      <div class="mt-12 pt-8 border-t border-gray-200">
+      <div class="mt-12 pt-8 border-t border-gray-200 share-section">
         <h3 class="text-xl font-bold text-gray-800 mb-4">Compartir este artículo</h3>
         <div class="flex flex-wrap gap-3">
           <a
@@ -137,9 +140,48 @@ layout: default
             class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors">
             WhatsApp
           </a>
+          <button id="copy-link-btn" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-full hover:bg-gray-300 transition-colors font-medium">
+            Copiar enlace
+          </button>
+          <button id="native-share-btn" class="hidden bg-nature-green-dark text-white px-6 py-3 rounded-full hover:bg-nature-green transition-colors font-medium">
+            Compartir
+          </button>
         </div>
+        <p id="copy-feedback" class="mt-2 text-sm text-nature-green-dark hidden">¡Enlace copiado al portapapeles!</p>
       </div>
     </div>
+
+    <!-- Navegación anterior / siguiente -->
+    {% if page.previous or page.next %}
+    <nav class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition-all group border border-gray-100">
+        <span class="text-xs text-gray-500 uppercase tracking-wide font-medium flex items-center mb-2">
+          <svg class="w-4 h-4 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Artículo anterior
+        </span>
+        <span class="font-semibold text-gray-800 group-hover:text-nature-green-dark transition-colors line-clamp-2 block">{{ page.next.title }}</span>
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition-all group border border-gray-100 text-right">
+        <span class="text-xs text-gray-500 uppercase tracking-wide font-medium flex items-center justify-end mb-2">
+          Artículo siguiente
+          <svg class="w-4 h-4 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </span>
+        <span class="font-semibold text-gray-800 group-hover:text-nature-green-dark transition-colors line-clamp-2 block">{{ page.previous.title }}</span>
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+    </nav>
+    {% endif %}
 
     <!-- Artículos relacionados -->
     {% assign related_posts = "" | split: "," %}

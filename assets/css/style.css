@@ -206,6 +206,66 @@ img[loading="lazy"].loaded {
 }
 
 /* ============================================
+   Barra de progreso de lectura
+   ============================================ */
+#reading-progress {
+  transition: width 100ms linear;
+}
+
+/* ============================================
+   Tabla de contenidos automática
+   ============================================ */
+.article-toc {
+  background-color: #f0f9f0;
+  border: 1px solid #c8e6c9;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.article-toc__title {
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.article-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-toc__item a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: block;
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+}
+
+.article-toc__item a:hover {
+  color: #388E3C;
+  text-decoration: underline;
+}
+
+.article-toc__item--sub {
+  padding-left: 1rem;
+}
+
+.article-toc__item--sub a {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.article-toc__item--sub a:hover {
+  color: #4CAF50;
+}
+
+/* ============================================
    Print styles
    ============================================ */
 @media print {
