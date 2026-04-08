@@ -13,69 +13,7 @@
     <!-- Grid de artículos -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for post in site.posts limit: 6 %}
-      <article class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
-        <a href="{{ post.url | relative_url }}" class="block h-full">
-          <!-- Imagen -->
-          <div class="relative h-56 bg-gray-200 overflow-hidden">
-            {% if post.image %}
-            <img
-              src="{{ post.image | relative_url }}"
-              alt="{{ post.title }}"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              loading="lazy"
-            />
-            {% else %}
-            <div class="w-full h-full bg-nature-green-light flex items-center justify-center">
-              <svg class="w-20 h-20 text-nature-green-dark opacity-40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-              </svg>
-            </div>
-            {% endif %}
-            {% if post.category %}
-            <div class="absolute top-4 left-4">
-              <span class="bg-nature-green-dark text-white px-3 py-1 rounded-full text-sm font-semibold">
-                {{ post.category }}
-              </span>
-            </div>
-            {% endif %}
-          </div>
-
-          <!-- Contenido -->
-          <div class="p-6">
-            <div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
-              <span class="flex items-center">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-                {{ post.date | date: "%d/%m/%Y" }}
-              </span>
-              {% if post.read_time %}
-              <span class="flex items-center">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                {{ post.read_time }} min
-              </span>
-              {% endif %}
-            </div>
-
-            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-nature-green-dark transition-colors">
-              {{ post.title }}
-            </h3>
-
-            <p class="text-gray-600 leading-relaxed mb-4">
-              {{ post.excerpt | strip_html | truncatewords: 25 }}
-            </p>
-
-            <div class="flex items-center text-nature-green-dark font-semibold group-hover:translate-x-2 transition-transform">
-              <span>Leer más</span>
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </div>
-          </div>
-        </a>
-      </article>
+      {% include article-card.html post=post %}
       {% endfor %}
     </div>
     {% else %}

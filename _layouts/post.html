@@ -41,15 +41,24 @@ layout: default
           </svg>
           {{ page.date | date: "%d/%m/%Y" }}
         </span>
-        {% if page.read_time %}
+        {% assign _read_minutes = content | number_of_words | divided_by: 200 | plus: 1 %}
         <span class="flex items-center">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          {{ page.read_time }} min de lectura
+          {{ _read_minutes }} min de lectura
         </span>
-        {% endif %}
       </div>
+
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="flex flex-wrap gap-2 mt-4">
+        {% for tag in page.tags %}
+        <a href="{{ '/articulos/' | relative_url }}?q={{ tag | url_encode }}" class="bg-nature-green-light text-nature-green-dark px-3 py-1 rounded-full text-sm font-medium hover:bg-nature-green-dark hover:text-white transition-colors">
+          #{{ tag }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </header>
 
